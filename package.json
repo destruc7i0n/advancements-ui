@@ -1,9 +1,10 @@
 {
   "name": "advancements-ui",
   "version": "1.0.0",
-  "description": "Downloadable UI for the advancements generator",
+  "description": "Minecraft Advancements Generator",
   "main": "index.js",
   "repository": "https://github.com/destruc7i0n/advancements-ui.git",
+  "homepage": "https://advancements.thedestruc7i0n.ca",
   "author": {
     "name": "TheDestruc7i0n",
     "email": "destruc7i0n@thedestruc7i0n.ca"
@@ -21,6 +22,7 @@
     "electron-builder": "^19.45.4"
   },
   "build": {
+    "productName": "Advancements",
     "appId": "advancements",
     "publish": {
       "provider": "s3",
@@ -56,6 +58,9 @@
     },
     "win": {
       "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false
     }
   }
 }

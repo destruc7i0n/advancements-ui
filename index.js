@@ -17,7 +17,7 @@ function createWindow () {
   win.maximize()
   win.show()
   win.loadURL('https://advancements.thedestruc7i0n.ca')
-  win.openDevTools()
+  // win.openDevTools()
   win.on('closed', () => {
     win = null
   })
