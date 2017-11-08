@@ -24,14 +24,11 @@
       "bucket": "advancements-artifacts"
     },
     "files": [
-      "index.js",
-      "icon.icns",
-      "icon.ico"
+      "index.js"
     ],
     "mac": {
       "category": "macOS.application",
-      "target": "dmg",
-      "icon": "icon.icns"
+      "target": "dmg"
     },
     "dmg": {
       "contents": [
@@ -55,8 +52,7 @@
       "category": ""
     },
     "win": {
-      "target": "nsis",
-      "icon": "icon.ico"
+      "target": "nsis"
     }
   }
 }

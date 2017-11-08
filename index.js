@@ -5,7 +5,7 @@ let win
 
 function createWindow () {
   win = new BrowserWindow({
-    icon: path.join(__dirname, 'icon.ico'),
+    icon: path.join(__dirname, 'build', 'icon.ico'),
     show: false,
     backgroundColor: '#eee',
     webPreferences: {
