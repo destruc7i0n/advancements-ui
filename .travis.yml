@@ -11,6 +11,19 @@ matrix:
     - os: linux
       language: generic
 
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
+      - icnsutils
+      - graphicsmagick
+      - libgnome-keyring-dev
+      - xz-utils
+      - xorriso
+      - xvfb
+
 cache:
   yarn: true
   directories:
