@@ -1,0 +1,64 @@
+{
+  "name": "advancements-ui",
+  "version": "1.0.0",
+  "description": "Downloadable UI for the advancements generator",
+  "main": "index.js",
+  "repository": "https://github.com/destruc7i0n/advancements-ui.git",
+  "author": "TheDestruc7i0n",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "dist": "electron-builder --publish always"
+  },
+  "dependencies": {
+    "electron": "^1.7.9",
+    "electron-builder": "^19.45.4"
+  },
+  "build": {
+    "appId": "advancements",
+    "publish": {
+      "provider": "s3",
+      "bucket": "advancements-artifacts"
+    },
+    "files": [
+      "index.js",
+      "icon.icns",
+      "icon.ico"
+    ],
+    "mac": {
+      "category": "macOS.application",
+      "target": "dmg",
+      "icon": "icon.icns"
+    },
+    "dmg": {
+      "contents": [
+        {
+          "x": 130,
+          "y": 220
+        },
+        {
+          "x": 410,
+          "y": 220,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": ""
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron-publisher-s3": "^19.45.0"
+  }
+}
