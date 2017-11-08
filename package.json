@@ -4,7 +4,10 @@
   "description": "Downloadable UI for the advancements generator",
   "main": "index.js",
   "repository": "https://github.com/destruc7i0n/advancements-ui.git",
-  "author": "TheDestruc7i0n",
+  "author": {
+    "name": "TheDestruc7i0n",
+    "email": "destruc7i0n@thedestruc7i0n.ca"
+  },
   "license": "MIT",
   "private": true,
   "scripts": {
