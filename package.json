@@ -17,7 +17,8 @@
     "dist": "electron-builder --publish always"
   },
   "dependencies": {
-    "electron-debug": "^1.4.0"
+    "electron-debug": "^1.4.0",
+    "open": "^0.0.5"
   },
   "devDependencies": {
     "electron": "^1.7.9",

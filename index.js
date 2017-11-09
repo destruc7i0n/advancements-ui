@@ -1,5 +1,6 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
+const open = require('open')
 
 // enable simple debug commands
 require('electron-debug')({ enabled: true })
@@ -23,6 +24,11 @@ function createWindow () {
   // win.openDevTools()
   win.on('closed', () => {
     win = null
+  })
+
+  win.webContents.on('new-window', function (event, url) {
+    event.preventDefault()
+    open(url)
   })
 }
 
