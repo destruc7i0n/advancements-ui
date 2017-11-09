@@ -17,16 +17,18 @@
     "dist": "electron-builder --publish always"
   },
   "devDependencies": {
-    "electron-publisher-s3": "^19.45.0",
     "electron": "^1.7.9",
-    "electron-builder": "^19.45.4"
+    "electron-builder": "^19.45.4",
+    "electron-debug": "^1.4.0",
+    "electron-publisher-s3": "^19.45.0"
   },
   "build": {
     "productName": "Advancements",
     "appId": "advancements",
     "publish": {
       "provider": "s3",
-      "bucket": "advancements-artifacts"
+      "bucket": "advancements-artifacts",
+      "path": "artifacts"
     },
     "files": [
       "index.js"

@@ -1,6 +1,9 @@
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
 
+// enable simple debug commands
+require('electron-debug')({ enabled: true })
+
 let win
 
 function createWindow () {
@@ -9,7 +12,7 @@ function createWindow () {
     show: false,
     backgroundColor: '#eee',
     webPreferences: {
-      zoomFactor: 0.75,
+      zoomFactor: 0.9,
       experimentalFeatures: true
     }
   })
