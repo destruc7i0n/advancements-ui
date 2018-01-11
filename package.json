@@ -1,6 +1,6 @@
 {
   "name": "advancements-ui",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Minecraft Advancements Generator",
   "main": "index.js",
   "repository": "https://github.com/destruc7i0n/advancements-ui.git",
@@ -17,21 +17,19 @@
     "dist": "electron-builder --publish always"
   },
   "dependencies": {
-    "electron-debug": "^1.4.0",
+    "electron-localshortcut": "^3.1.0",
     "open": "^0.0.5"
   },
   "devDependencies": {
-    "electron": "^1.7.9",
-    "electron-builder": "^19.45.4",
-    "electron-publisher-s3": "^19.45.0"
+    "electron": "^1.7.10",
+    "electron-builder": "^19.52.1",
+    "electron-publisher-s3": "^19.53.3"
   },
   "build": {
     "productName": "Advancements",
     "appId": "advancements",
     "publish": {
-      "provider": "s3",
-      "bucket": "advancements-artifacts",
-      "path": "artifacts"
+      "provider": "github"
     },
     "files": [
       "index.js"
@@ -62,10 +60,10 @@
       "category": ""
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis-web"
     },
-    "nsis": {
-      "oneClick": false
+    "nsisWeb": {
+      "oneClick": true
     }
   }
 }
