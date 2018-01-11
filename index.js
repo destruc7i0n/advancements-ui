@@ -40,8 +40,7 @@ function createWindow () {
   )
 
   // load into browserview
-  // view.webContents.loadURL('https://advancements.thedestruc7i0n.ca')
-  view.webContents.loadURL('http://localhost:5000')
+  view.webContents.loadURL('https://advancements.thedestruc7i0n.ca')
 
   // view.webContents.openDevTools()
 
