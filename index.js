@@ -33,12 +33,15 @@ function createWindow () {
   })
 
   win.setBrowserView(view)
+  view.setAutoResize({ width: true, height: true })
+  view.setBackgroundColor('#eee')
   view.setBounds(
     Object.assign({}, win.getContentBounds(), {x: 0, y: 0})
   )
 
   // load into browserview
-  view.webContents.loadURL('https://advancements.thedestruc7i0n.ca')
+  // view.webContents.loadURL('https://advancements.thedestruc7i0n.ca')
+  view.webContents.loadURL('http://localhost:5000')
 
   // view.webContents.openDevTools()
 
@@ -46,12 +49,26 @@ function createWindow () {
     win = null
   })
 
-  view.webContents.on('new-window', function (event, url) {
+  view.webContents.on('new-window', (event, url) => {
     event.preventDefault()
     // only open on links that aren't the login
     if (url !== 'about:blank') {
       open(url)
     }
+  })
+
+  view.webContents.on('did-finish-load', () => {
+    // update the registrations of all service workers
+    // give it about 10 seconds
+    setTimeout(() => {
+      view.webContents.executeJavaScript(`console.info('Attempting to update service worker...')`)
+      view.webContents.executeJavaScript(`
+        window.navigator.serviceWorker.getRegistration().then(reg => {
+          console.info('Found service worker, attempting to update.', reg)
+          reg.update()
+        }).catch((e) => console.log('Error with automatic service worker update:', e))
+      `)
+    }, 10 * 1000)
   })
 }
 
